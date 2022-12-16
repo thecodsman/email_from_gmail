@@ -57,7 +57,6 @@ def get_inputs():
     return inputs, inputa, inputb
 
 def print_inputs(userinput, inputa, inputb):
-
     if userinput == inputa:
         if not userinput.startswith("a"):
             print('dooba')
