@@ -6,8 +6,23 @@ then make an app password for you gmail account if you dont already have one, th
 then run `python main.py` and it should work
 
 ## General rules on how to edit the code
-no more then 3 indents (the indent from declaring a function doesnt count) you can look at my code to see ways to limit your indents
+no more then 3 indents (the indent from declaring a function doesnt count) you can at the next section down on ways to do this
 use `+=` rather than `a = a + b` and dont also you dont have to comment no literally everything just use good variable names and function names but if something isnt totally clear
 then use a quick comment
 
+## Ways to limit nesting
+one way it to "invert" if statements take this code for example
+```python
+for line in email:
+    if line.startswith() != ">":
+       emailstring.append(line) 
+```
+
+you can make it with less nesting like this
+```python
+for line in email:
+    if line.startswith() == ">": continue
+    emailstring.append(line)
+```
+**much better :)**
 

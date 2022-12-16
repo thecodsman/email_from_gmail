@@ -47,12 +47,12 @@ def select_correct_mail(imap, mailbox, userFilter, startDate, endDate):
     imap.select(mailbox)
     searchFilter = '('
     if userFilter != 0:
-        searchFilter = searchFilter + f'TO "{userFilter}"' # if the user is using a filter then it adds it to the filters
+        searchFilter += f'TO "{userFilter}"' # if the user is using a filter then it adds it to the filters
 
     if startDate != 0:
-        searchFilter = searchFilter + f'SENTSINCE "{startDate}" SENTBEFORE "{endDate}"'
+        searchFilter += f'SENTSINCE "{startDate}" SENTBEFORE "{endDate}"'
 
-    searchFilter = searchFilter + ')'
+    searchFilter += ')'
 
     if searchFilter == '()': # if there are no filters then select all mail
         searchFilter = '(All)'
@@ -62,18 +62,6 @@ def select_correct_mail(imap, mailbox, userFilter, startDate, endDate):
         
 # -------------------------------------------------------------------------------------------------------------------------------    
 
-def get_email_body(msg):
-    body = ''
-    for part in msg.walk():
-        if part.get_content_type() != "text/plain": continue
-        try:
-            body = part.get_payload(decode=True).decode()
-        except:
-            body = part.get_payload(decode=True)
-
-    return body
-
-# -------------------------------------------------------------------------------------------------------------------------------
 def get_emails(imap, messages):
     allEmail = ''
     subjectsAndDates = dict()
@@ -89,7 +77,15 @@ def get_emails(imap, messages):
             date = msg['date']
             subjectsAndDates[subject] = date # the key is the subject the value is the date
             
-            body = get_email_body(msg)
+            body = ''
+            for part in msg.walk():
+                if part.get_content_type() != "text/plain": continue
+                body = part.get_payload(decode=True)
+            try:
+                body.decode()
+            except:
+                pass
+
             allEmail += str(body)
                 
     
