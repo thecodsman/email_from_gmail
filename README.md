@@ -12,7 +12,7 @@ then use a quick comment
 
 ## Ways to limit nesting
 ### Option number 1
-one way it to "invert" if statements take this code for example
+one way to limit nesting is to "invert" if statements take this code for example
 ```python
 for line in email:
     if line.startswith() != ">":
