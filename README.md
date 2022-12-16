@@ -64,7 +64,7 @@ def print_inputs(userinput, inputa, inputb):
         print('blah blah blah')
         continue
 
-    for letter in userinput: # inbutb
+    for letter in userinput: # inputb
         if letter != 'a': continue
         print('dooba')
                 
