@@ -2,7 +2,7 @@
 
 ## How to use
 create a `email_config.py` file and make a `user` variable and set it to your email address (eg. `user = johndoe@gmail.com`)
-then make an app password for you gmail account if you dont already have one, then set a `password` variable to your app password
+then make an app password for your gmail account if you dont already have one you can see how to do that [here](https://support.google.com/accounts/answer/185833?hl=en). Then set a `password` variable to your app password
 then run `python main.py` and it should work
 
 ## General rules on how to edit the code
