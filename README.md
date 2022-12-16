@@ -19,7 +19,7 @@ for line in email:
        emailstring.append(line) 
 ```
 
-you can make it with less nesting like this
+you can make it use less nesting like this
 ```python
 for line in email:
     if line.startswith() == ">": continue
