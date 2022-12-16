@@ -35,11 +35,16 @@ take this code
 inputa = input('input some stuff')
 inputb = input('input some stuff again')
 inputs = [inputa, inputb]
-for input in inputs:
-    if input == inputa:
-        print('its the first one')
-    if input == inputb:
-        print('its the second one')
+for userinput in inputs:
+    if userinput == inputa:
+        if userinput.startswith("a"):
+            print('blah blah blah')
+        else:
+            print('dooba')
+    if userinput == inputb:
+        for letter in userinput:
+            if letter == 'a':
+                print(f'dooba')
 ```
 while this code has no actual use it proves that sometimes you cant do the first option 
 so how would you get less nesting?
@@ -51,17 +56,26 @@ def get_inputs():
     inputs = [inputa, inputb]
     return inputs, inputa, inputb
 
-def print_inputs(input, inputa, inputb):
-    if input == inputa:
-        print('its the first one')
-    if input == inputb:
-        print('its the second one')
+def print_inputs(userinput, inputa, inputb):
+
+    if userinput == inputa:
+        if not userinput.startswith("a"):
+            print('dooba')
+            continue
+        print('blah blah blah')
+
+    if userinput == inputb:
+        for letter in userinput:
+            if letter != 'a': continue
+            print('dooba')
+                
 
 inputs, inputa, inputb = get_inputs()
-for input in inputs:
-    print_inputs(input, inputa, inputb)
+for userinput in inputs:
+    print_inputs(userinput, inputa, inputb)
 ```
-while you are typing more lines of code, that isnt always the goal. You usually value readabilty over the amount of lines of code
+as you can see I also used the first method and that made it much more readable, also gave it less nesting.
+While you are typing more lines of code, that isnt always the goal. You usually value readabilty over the amount of lines of code
 and while the latter example might not look too much more readable then the first one now just imagine
 what it would look like if you had 10 times the amount of code
 
