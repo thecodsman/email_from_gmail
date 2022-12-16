@@ -62,11 +62,11 @@ def print_inputs(userinput, inputa, inputb):
             print('dooba')
             continue
         print('blah blah blah')
+        continue
 
-    if userinput == inputb:
-        for letter in userinput:
-            if letter != 'a': continue
-            print('dooba')
+    for letter in userinput: # inbutb
+        if letter != 'a': continue
+        print('dooba')
                 
 
 inputs, inputa, inputb = get_inputs()
