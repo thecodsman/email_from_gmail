@@ -3,7 +3,7 @@
 ## How to use
 create a `email_config.py` file and make a `user` variable and set it to your email address (eg. `user = johndoe@gmail.com`)
 then make an app password for your gmail account if you dont already have one you can see how to do that [here](https://support.google.com/accounts/answer/185833?hl=en). Then set a `password` variable to your app password
-then run `python main.py` and it should work
+then run `python manage.py runserver` then go to [http://127.0.0.1:8000/form/](http://127.0.0.1:8000/form/) and it should work
 
 ## General rules on how to edit the code
 no more then 3 indents (the indent from declaring a function doesnt count) you can at the next section down on ways to do this

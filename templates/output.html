@@ -1,0 +1,7 @@
+{% for subject, date in subjectsAndDates.items %}
+    <p>Subject: {{ subject }} || Date: {{ date }}</p>
+{% endfor %}
+
+{% for word, count in top10Words %}
+    <p>{{ word }}: {{ count }}</p>
+{% endfor %}
